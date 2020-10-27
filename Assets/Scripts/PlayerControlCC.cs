@@ -15,16 +15,26 @@ public class PlayerControlCC : MonoBehaviour
 
 
     private float turnSmoothVel;
+    private bool active = true;
 
+    private void Awake()
+    {
+        NarrativeManager.instance.PreviousInteraction.AddListener(DisableComponent);
+        NarrativeManager.instance.PostInteraction.AddListener(EnableComponent);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         this.anim = this.GetComponent<Animator>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
+        if (!active)
+            return;
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         
@@ -54,5 +64,18 @@ public class PlayerControlCC : MonoBehaviour
 
         anim.SetFloat("VelX", horizontal);
         anim.SetFloat("VelY", vertical);
+    }
+
+    void DisableComponent()
+    {
+        anim.SetFloat("VelX", 0);
+        anim.SetFloat("VelY", 0);
+
+        this.active = false;
+    }
+
+    void EnableComponent()
+    {
+        this.active = true;
     }
 }
