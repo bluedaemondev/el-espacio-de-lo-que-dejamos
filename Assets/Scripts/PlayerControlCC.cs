@@ -17,7 +17,7 @@ public class PlayerControlCC : MonoBehaviour
     private float turnSmoothVel;
     private bool active = true;
 
-    private void Awake()
+    private void OnEnable()
     {
         NarrativeManager.instance.PreviousInteraction.AddListener(DisableComponent);
         NarrativeManager.instance.PostInteraction.AddListener(EnableComponent);

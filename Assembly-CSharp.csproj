@@ -91,6 +91,7 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Water\NastyWater.cs" />
+    <Compile Include="Assets\Scripts\NarrativeManager.cs" />
     <Compile Include="Assets\Scripts\GeneralInfo.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\VignetteComponent.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
@@ -119,7 +120,7 @@
     <Compile Include="Assets\Scripts\PersonajeControl.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Water\PostProcessingWater.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\Scripts\NarrativeManager.cs" />
+    <Compile Include="Assets\Scripts\CloseInteractionOnDisable.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />

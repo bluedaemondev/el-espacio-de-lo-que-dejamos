@@ -20,18 +20,23 @@ public class NarrativeManager : MonoBehaviour
         }
     }
 
+    // antes y despues de una interaccion limpio los eventos
     public void OnPrepairForInteraction()
     {
         if(PreviousInteraction != null)
         {
             instance.PreviousInteraction.Invoke();
+            instance.PreviousInteraction = null;
         }
     }
+
     public void OnPostInteraction()
     {
         if (PostInteraction != null)
         {
             instance.PostInteraction.Invoke();
+            instance.PostInteraction = null;
+
         }
     }
 }
