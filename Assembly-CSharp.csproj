@@ -69,6 +69,7 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\CloseInteractionOnDisable.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\PostProcessingModel.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\DitheringComponent.cs" />
@@ -120,7 +121,9 @@
     <Compile Include="Assets\Scripts\PersonajeControl.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Water\PostProcessingWater.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\Scripts\CloseInteractionOnDisable.cs" />
+    <Compile Include="Assets\Scripts\CameraActiveChanger.cs" />
+    <Compile Include="Assets\Scripts\PositionAtTarget.cs" />
+    <Compile Include="Assets\Scripts\SliderPersonasController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />

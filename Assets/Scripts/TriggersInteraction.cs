@@ -17,8 +17,8 @@ public class TriggersInteraction : MonoBehaviour
     private bool active = false;
     private bool wasActivated = false;
 
-    [Header("Instanciar un objeto con las cosas que hagan falta")]
-    public GameObject prefabInteraccion;
+    [Header("Instanciar uno o mas objetos con eventos")]
+    public List<GameObject> prefabInteraccion;
 
     private void OnTriggerStay(Collider other)
     {
@@ -27,20 +27,32 @@ public class TriggersInteraction : MonoBehaviour
 
         RaycastHit auxObstaculos;
 
-        var rayCanInteract = new Ray(transform.position, other.transform.position); 
+        //evito que haya un obstaculo en el medio para poder interactuar
+
+        var rayCanInteract = new Ray(transform.position, other.transform.position);
         var rayval = Physics.Raycast(rayCanInteract, out auxObstaculos, GeneralInfo.TERRAIN_LAYER);
+
         //Debug.Log(auxObstaculos);
-        print(rayval);
+        //print(rayval);
 
         if (Input.GetKeyDown(interactionKey) && auxObstaculos.collider == null)
         {
             Debug.Log("Todo ok, no hay obstaculos, toque el input");
-            active = wasActivated = true;
 
             NarrativeManager.instance.OnPrepairForInteraction(); // desactivo camara, movimiento, etc
-            Instantiate(prefabInteraccion, transform.position, Quaternion.identity);
+            GameObject container = Instantiate<GameObject>(new GameObject(), Vector3.zero, Quaternion.identity);
+            foreach (var item in prefabInteraccion)
+            {
+                Instantiate(item, transform.position, Quaternion.identity, container.transform);
+                // nota:
+                // necesito un script para guardar las posiciones y datos de camara?
+                // estarian en todos los prefabs que quieran crear
+            }
+            active = wasActivated = true;
+            this.enabled = false;
         }
 
-        
+
+
     }
 }
