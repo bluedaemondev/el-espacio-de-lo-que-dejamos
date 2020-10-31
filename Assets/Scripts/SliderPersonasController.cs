@@ -15,6 +15,10 @@ public class SliderPersonasController : MonoBehaviour
     {
         textOverSliderHandle.text = sliderPrintedValues[Mathf.RoundToInt(slider.value)];
         print("cambiando slider " + textOverSliderHandle.text);
+
+        GeneralInfo.selectedCantidadDePersonas = textOverSliderHandle.text;
+        //sobre general info guardo lo que necesite de respuestas del jugador
     }
+
 
 }
